@@ -1,0 +1,6 @@
+package com.mohit.idea.entity;
+@Entity
+public class Idea {
+
+	
+}

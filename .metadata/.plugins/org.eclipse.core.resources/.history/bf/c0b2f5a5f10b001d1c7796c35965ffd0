@@ -1,0 +1,72 @@
+package com.mohit.idea.dto;
+
+import java.sql.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.mohit.idea.entity.Idea;
+
+import jakarta.validation.constraints.NotNull;
+
+public class IdeaDTO {
+
+	@NotNull
+	private Long id;
+
+	@NotNull
+	private String content;
+
+	@NotNull
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	private Date created_at;
+
+	@NotNull
+	private String status;
+
+	@NotNull
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	private Date completed_at;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public Date getCreated_at() {
+		return created_at;
+	}
+
+	public void setCreated_at(Date created_at) {
+		this.created_at = created_at;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Date getCompleted_at() {
+		return completed_at;
+	}
+
+	public void setCompleted_at(Date completed_at) {
+		this.completed_at = completed_at;
+	}
+
+	public static IdeaDTO valueOf(Idea idea) {
+
+	}
+}

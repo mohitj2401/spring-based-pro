@@ -1,0 +1,22 @@
+package com.mohit.idea.dto;
+
+public class ErrorMessage {
+	private int statusCode;
+	private List message;
+
+	public int getStatusCode() {
+		return statusCode;
+	}
+
+	public void setStatusCode(int statusCode) {
+		this.statusCode = statusCode;
+	}
+
+	public List getMessage() {
+		return message;
+	}
+
+	public void setMessage(List message) {
+		this.message = message;
+	}
+}

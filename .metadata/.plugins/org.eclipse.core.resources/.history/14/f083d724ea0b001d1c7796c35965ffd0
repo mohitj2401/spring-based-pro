@@ -1,0 +1,5 @@
+package com.mohit.idea.controller;
+@RestController
+public class IdeaController {
+
+}

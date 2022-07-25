@@ -1,0 +1,21 @@
+package com.mohit.idea.service;
+
+import org.springframework.stereotype.Service;
+
+import com.mohit.idea.controller.list;
+import com.mohit.idea.dto.IdeaDTO;
+
+@Service
+public class IdeaService {
+
+	public list<IdeaDTO> getAllIdeas() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String createIdea() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

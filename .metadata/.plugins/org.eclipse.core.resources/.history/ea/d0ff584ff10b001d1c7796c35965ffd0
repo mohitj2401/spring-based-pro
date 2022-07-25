@@ -1,0 +1,28 @@
+package com.mohit.idea.dto;
+
+import java.sql.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import jakarta.persistence.Column;
+import jakarta.validation.constraints.NotNull;
+
+public class IdeaDTO {
+
+	@NotNull
+	private Long id;
+
+	@NotNull
+	private String content;
+
+	@NotNull
+	private Date created_at;
+
+	@Column(nullable = false)
+	private String status;
+
+	@Column(nullable = true)
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+	private Date completed_at;
+
+}

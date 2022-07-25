@@ -1,0 +1,5 @@
+package com.mohit.idea.service;
+@Servicer
+public class IdeaServices {
+
+}

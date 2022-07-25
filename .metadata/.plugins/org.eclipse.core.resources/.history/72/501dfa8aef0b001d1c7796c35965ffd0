@@ -1,0 +1,12 @@
+package com.mohit.idea.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+
+@Entity
+public class Idea {
+
+	@Id
+	@Column(name = "id", nullable = false)
+	Long id;
+}

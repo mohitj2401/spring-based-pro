@@ -1,0 +1,9 @@
+package com.mohit.idea.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@CrossOrigin
+public class IdeaController {
+
+}

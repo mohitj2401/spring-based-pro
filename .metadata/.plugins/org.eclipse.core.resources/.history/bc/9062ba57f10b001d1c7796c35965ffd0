@@ -1,0 +1,23 @@
+package com.mohit.idea.dto;
+
+import java.sql.Date;
+
+import jakarta.validation.constraints.NotNull;
+
+public class IdeaDTO {
+
+	@NotNull
+	private Long id;
+
+	@NotNull
+	private String content;
+
+	@NotNull
+	private Date created_at;
+
+	@NotNull
+	private String status;
+
+	private Date completed_at;
+
+}
