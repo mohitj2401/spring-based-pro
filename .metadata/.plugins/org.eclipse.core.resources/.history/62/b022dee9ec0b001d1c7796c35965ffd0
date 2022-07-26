@@ -1,3 +1,0 @@
-spring.application.name=IdeaMS
-server.port=1900
-spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
