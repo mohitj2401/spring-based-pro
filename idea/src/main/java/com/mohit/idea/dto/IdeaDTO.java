@@ -11,16 +11,15 @@ public class IdeaDTO {
 	private Long id;
 
 	@NotNull
-	private String content;
+	private String title;
 
 	@NotNull
-
-	private Timestamp created_at;
+	private String content;
 
 	@NotNull
 	private String status;
 
-	private Timestamp completed_at;
+	private Timestamp completedAt;
 
 	public Long getId() {
 		return id;
@@ -28,6 +27,14 @@ public class IdeaDTO {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getContent() {
@@ -38,14 +45,6 @@ public class IdeaDTO {
 		this.content = content;
 	}
 
-	public Timestamp getCreated_at() {
-		return created_at;
-	}
-
-	public void setCreated_at(Timestamp created_at) {
-		this.created_at = created_at;
-	}
-
 	public String getStatus() {
 		return status;
 	}
@@ -54,19 +53,19 @@ public class IdeaDTO {
 		this.status = status;
 	}
 
-	public Timestamp getCompleted_at() {
-		return completed_at;
+	public Timestamp getCompletedAt() {
+		return completedAt;
 	}
 
-	public void setCompleted_at(Timestamp completed_at) {
-		this.completed_at = completed_at;
+	public void setCompletedAt(Timestamp completedAt) {
+		this.completedAt = completedAt;
 	}
 
 	public static IdeaDTO valueOf(Idea idea) {
 		IdeaDTO ideaDto = new IdeaDTO();
-		ideaDto.setCompleted_at(idea.getCompleted_at());
+		ideaDto.setCompletedAt(idea.getCompletedAt());
 		ideaDto.setContent(idea.getContent());
-		ideaDto.setCreated_at(idea.getCreated_at());
+		ideaDto.setTitle(idea.getTitle());
 		ideaDto.setId(idea.getId());
 		ideaDto.setStatus(idea.getStatus());
 		return ideaDto;
@@ -74,9 +73,9 @@ public class IdeaDTO {
 
 	public Idea createEntity() {
 		Idea idea = new Idea();
-		idea.setCompleted_at(this.getCompleted_at());
+		idea.setCompletedAt(this.getCompletedAt());
 		idea.setContent(this.getContent());
-		idea.setCreated_at(this.getCreated_at());
+		idea.setTitle(this.getTitle());
 		idea.setId(this.getId());
 		idea.setStatus(this.getStatus());
 		return idea;

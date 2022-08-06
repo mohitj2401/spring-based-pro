@@ -43,6 +43,7 @@ public class IdeaController {
 	@SuppressWarnings("rawtypes")
 	@PostMapping
 	public ResponseEntity createIdea(@Valid @RequestBody IdeaDTO ideaDTO, Errors errors) {
+
 		String response = "";
 		if (errors.hasErrors()) {
 			response = errors.getAllErrors().stream().map(ObjectError::getDefaultMessage)

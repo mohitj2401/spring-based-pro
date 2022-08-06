@@ -1,6 +1,10 @@
 package com.mohit.idea.entity;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,17 +19,24 @@ public class Idea {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@Column(name = "title", nullable = false, columnDefinition = "TEXT")
+	private String title;
+
 	@Column(name = "content", nullable = false, columnDefinition = "TEXT")
 	private String content;
-
-	@Column(nullable = false)
-	private Timestamp created_at;
 
 	@Column(nullable = false)
 	private String status;
 
 	@Column(nullable = true)
-	private Timestamp completed_at;
+	private Timestamp completedAt;
+
+	@Column(updatable = false, nullable = true)
+	@CreationTimestamp
+	private LocalDateTime createdAt;
+
+	@UpdateTimestamp
+	private LocalDateTime updatedAt;
 
 	public Long getId() {
 		return id;
@@ -33,6 +44,14 @@ public class Idea {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getContent() {
@@ -43,14 +62,6 @@ public class Idea {
 		this.content = content;
 	}
 
-	public Timestamp getCreated_at() {
-		return created_at;
-	}
-
-	public void setCreated_at(Timestamp created_at) {
-		this.created_at = created_at;
-	}
-
 	public String getStatus() {
 		return status;
 	}
@@ -59,12 +70,12 @@ public class Idea {
 		this.status = status;
 	}
 
-	public Timestamp getCompleted_at() {
-		return completed_at;
+	public Timestamp getCompletedAt() {
+		return completedAt;
 	}
 
-	public void setCompleted_at(Timestamp completed_at) {
-		this.completed_at = completed_at;
+	public void setCompletedAt(Timestamp completedAt) {
+		this.completedAt = completedAt;
 	}
 
 }
