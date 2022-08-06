@@ -1,8 +1,7 @@
 package com.mohit.diary.dto;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mohit.diary.entity.Diary;
 
 import jakarta.validation.constraints.NotNull;
@@ -18,8 +17,7 @@ public class DiaryDto {
 	private String content;
 
 	@NotNull(message = "Created at field is required")
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private Date created_at;
+	private Timestamp created_at;
 
 	public Long getId() {
 		return id;
@@ -45,11 +43,11 @@ public class DiaryDto {
 		this.content = content;
 	}
 
-	public Date getCreated_at() {
+	public Timestamp getCreated_at() {
 		return created_at;
 	}
 
-	public void setCreated_at(Date created_at) {
+	public void setCreated_at(Timestamp created_at) {
 		this.created_at = created_at;
 	}
 

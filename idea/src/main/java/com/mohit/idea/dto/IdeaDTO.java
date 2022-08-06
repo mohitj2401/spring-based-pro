@@ -1,8 +1,7 @@
 package com.mohit.idea.dto;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.mohit.idea.entity.Idea;
 
 import jakarta.validation.constraints.NotNull;
@@ -15,14 +14,13 @@ public class IdeaDTO {
 	private String content;
 
 	@NotNull
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private Date created_at;
+
+	private Timestamp created_at;
 
 	@NotNull
 	private String status;
 
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private Date completed_at;
+	private Timestamp completed_at;
 
 	public Long getId() {
 		return id;
@@ -40,11 +38,11 @@ public class IdeaDTO {
 		this.content = content;
 	}
 
-	public Date getCreated_at() {
+	public Timestamp getCreated_at() {
 		return created_at;
 	}
 
-	public void setCreated_at(Date created_at) {
+	public void setCreated_at(Timestamp created_at) {
 		this.created_at = created_at;
 	}
 
@@ -56,11 +54,11 @@ public class IdeaDTO {
 		this.status = status;
 	}
 
-	public Date getCompleted_at() {
+	public Timestamp getCompleted_at() {
 		return completed_at;
 	}
 
-	public void setCompleted_at(Date completed_at) {
+	public void setCompleted_at(Timestamp completed_at) {
 		this.completed_at = completed_at;
 	}
 

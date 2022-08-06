@@ -1,8 +1,6 @@
 package com.mohit.story.entity;
 
-import java.sql.Date;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
+import java.sql.Timestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,8 +22,7 @@ public class Story {
 	private String content;
 
 	@Column(nullable = false)
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private Date created_at;
+	private Timestamp created_at;
 
 	public Long getId() {
 		return id;
@@ -51,11 +48,11 @@ public class Story {
 		this.content = content;
 	}
 
-	public Date getCreated_at() {
+	public Timestamp getCreated_at() {
 		return created_at;
 	}
 
-	public void setCreated_at(Date created_at) {
+	public void setCreated_at(Timestamp created_at) {
 		this.created_at = created_at;
 	}
 

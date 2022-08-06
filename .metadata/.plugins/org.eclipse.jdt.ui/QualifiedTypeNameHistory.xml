@@ -2,4 +2,5 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="com.mohit.diary.dto.DiaryDto"/>
     <fullyQualifiedTypeName name="com.mohit.diary.entity.Diary"/>
+    <fullyQualifiedTypeName name="java.sql.Timestamp"/>
 </qualifiedTypeNameHistroy>

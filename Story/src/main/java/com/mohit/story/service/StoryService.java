@@ -45,10 +45,13 @@ public class StoryService {
 
 	}
 
-	public String deleteStory(Long storyId) {
+	public List<String> deleteStory(Long storyId) {
 		Story story = repository.findById(storyId).get();
 		repository.delete(story);
-		return "Deleted";
+		List<String> response = new ArrayList<String>();
+		response.add("Deleted");
+		return response;
+
 	}
 
 }

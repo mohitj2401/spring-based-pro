@@ -78,7 +78,7 @@ public class StoryController {
 	@SuppressWarnings("rawtypes")
 	@DeleteMapping("/{storyId}")
 	public ResponseEntity deletestory(@PathVariable("storyId") Long storyId) {
-		String response = service.deleteStory(storyId);
+		List<String> response = service.deleteStory(storyId);
 		return ResponseEntity.ok(response);
 	}
 
