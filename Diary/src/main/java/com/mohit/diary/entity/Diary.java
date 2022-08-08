@@ -1,6 +1,8 @@
 package com.mohit.diary.entity;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,14 +17,15 @@ public class Diary {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
+	@Column(nullable = false)
+	private String title;
+
 	@Column(name = "content", nullable = false, columnDefinition = "TEXT")
 	private String content;
 
-	@Column(nullable = false)
-	private Timestamp created_at;
-
-	@Column(nullable = false)
-	private String title;
+	@Column(updatable = false, nullable = true)
+	@CreationTimestamp
+	private LocalDateTime createdAt;
 
 	public Long getId() {
 		return id;
@@ -30,6 +33,14 @@ public class Diary {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 	public String getContent() {
@@ -40,20 +51,17 @@ public class Diary {
 		this.content = content;
 	}
 
-	public Timestamp getCreated_at() {
-		return created_at;
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
 	}
 
-	public void setCreated_at(Timestamp created_at) {
-		this.created_at = created_at;
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
 	}
 
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
+	@Override
+	public String toString() {
+		return "Diary [id=" + id + ", title=" + title + ", content=" + content + ", createdAt=" + createdAt + "]";
 	}
 
 }

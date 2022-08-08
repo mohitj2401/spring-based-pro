@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: DiaryMS
+  cloud:
+    consul:
+      config:
+        enabled: true
+        prefixes: config
+        defaultContext: application
+        profileSeparator: '::'
+        format: YAML
+server:
+  port: 1700
+  

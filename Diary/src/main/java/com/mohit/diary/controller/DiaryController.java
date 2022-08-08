@@ -3,6 +3,8 @@ package com.mohit.diary.controller;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +31,8 @@ import jakarta.validation.Valid;
 @RequestMapping("/diary")
 public class DiaryController {
 
+	Logger logger = LoggerFactory.getLogger(this.getClass());
+
 	@Autowired
 	DiaryService service;
 
@@ -40,6 +44,7 @@ public class DiaryController {
 	@SuppressWarnings("rawtypes")
 	@PostMapping
 	public ResponseEntity createDiary(@Valid @RequestBody DiaryDto diaryDTO, Errors errors) {
+		logger.debug("here");
 		String response = "";
 		if (errors.hasErrors()) {
 			response = errors.getAllErrors().stream().map(ObjectError::getDefaultMessage)

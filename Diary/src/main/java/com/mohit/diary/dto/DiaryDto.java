@@ -1,6 +1,6 @@
 package com.mohit.diary.dto;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import com.mohit.diary.entity.Diary;
 
@@ -16,8 +16,7 @@ public class DiaryDto {
 	@NotNull(message = "Content field is required")
 	private String content;
 
-	@NotNull(message = "Created at field is required")
-	private Timestamp created_at;
+	private LocalDateTime createdAt;
 
 	public Long getId() {
 		return id;
@@ -43,12 +42,12 @@ public class DiaryDto {
 		this.content = content;
 	}
 
-	public Timestamp getCreated_at() {
-		return created_at;
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
 	}
 
-	public void setCreated_at(Timestamp created_at) {
-		this.created_at = created_at;
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
 	}
 
 	public static DiaryDto valueOf(Diary diary) {
@@ -56,7 +55,7 @@ public class DiaryDto {
 		diaryDto.setContent(diary.getContent());
 		diaryDto.setId(diary.getId());
 		diaryDto.setTitle(diary.getTitle());
-		diaryDto.setCreated_at(diary.getCreated_at());
+		diaryDto.setCreatedAt(diary.getCreatedAt());
 		return diaryDto;
 	}
 
@@ -65,7 +64,12 @@ public class DiaryDto {
 		diary.setContent(this.getContent());
 		diary.setId(this.getId());
 		diary.setTitle(this.getTitle());
-		diary.setCreated_at(this.getCreated_at());
 		return diary;
 	}
+
+	@Override
+	public String toString() {
+		return "DiaryDto [id=" + id + ", title=" + title + ", content=" + content + ", createdAt=" + createdAt + "]";
+	}
+
 }

@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: StoryMS
+  cloud:
+    consul:
+      config:
+        enabled: true
+        prefixes: config
+        defaultContext: application
+        profileSeparator: "::"
+        format: YAML
+  
+server:
+  port: 1900
+  

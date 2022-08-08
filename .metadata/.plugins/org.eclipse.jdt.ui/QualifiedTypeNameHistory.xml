@@ -3,4 +3,7 @@
     <fullyQualifiedTypeName name="com.mohit.diary.dto.DiaryDto"/>
     <fullyQualifiedTypeName name="com.mohit.diary.entity.Diary"/>
     <fullyQualifiedTypeName name="java.sql.Timestamp"/>
+    <fullyQualifiedTypeName name="org.hibernate.validator.internal.util.logging.LoggerFactory"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
 </qualifiedTypeNameHistroy>
