@@ -3,6 +3,8 @@ spring:
     name: DiaryMS
   cloud:
     consul:
+      discovery: 
+        hostname: localhost
       config:
         enabled: true
         prefixes: config
