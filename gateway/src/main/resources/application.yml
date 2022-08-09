@@ -1,0 +1,30 @@
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+              allowedOrigins: "*"
+              allowedMethods: "*"
+              allowedHeaders: "*"
+      discovery:
+        locator:
+          enabled: true  
+      routes:
+      - id: StoryMs
+        uri: lb://StoryMs
+        predicates:
+        - Path=/story/**
+      - id: IdeaMS
+        uri: lb://IdeaMS
+        predicates:
+        - Path=/idea/**
+      - id: DiaryMS
+        uri: lb://DiaryMS
+        predicates:
+        - Path=/diary/**
+        
+        
+        

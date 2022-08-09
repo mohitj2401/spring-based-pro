@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: GatewayMS
+  cloud:
+    consul:
+      discovery: 
+        hostname: localhost
+    
+server:
+  port: 9000
+  
