@@ -1,6 +1,8 @@
 package com.mohit.story.entity;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -21,8 +23,9 @@ public class Story {
 	@Column(name = "content", nullable = false, columnDefinition = "TEXT")
 	private String content;
 
-	@Column(nullable = false)
-	private Timestamp created_at;
+	@Column(updatable = false, nullable = true)
+	@CreationTimestamp
+	private LocalDateTime createdAt;
 
 	public Long getId() {
 		return id;
@@ -48,12 +51,12 @@ public class Story {
 		this.content = content;
 	}
 
-	public Timestamp getCreated_at() {
-		return created_at;
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
 	}
 
-	public void setCreated_at(Timestamp created_at) {
-		this.created_at = created_at;
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
 	}
 
 }

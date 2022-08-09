@@ -1,6 +1,6 @@
 package com.mohit.story.dto;
 
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import com.mohit.story.entity.Story;
 
@@ -16,8 +16,7 @@ public class StoryDto {
 	@NotNull(message = "Content field is required")
 	private String content;
 
-	@NotNull(message = "Created at field is required")
-	private Timestamp created_at;
+	private LocalDateTime createdAt;
 
 	public Long getId() {
 		return id;
@@ -43,19 +42,18 @@ public class StoryDto {
 		this.content = content;
 	}
 
-	public Timestamp getCreated_at() {
-		return created_at;
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
 	}
 
-	public void setCreated_at(Timestamp created_at) {
-		this.created_at = created_at;
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
 	}
 
 	public Story createEntity() {
 		Story story = new Story();
 		story.setId(this.getId());
 		story.setContent(this.getContent());
-		story.setCreated_at(this.getCreated_at());
 		story.setTitle(this.getTitle());
 		return story;
 
@@ -65,7 +63,7 @@ public class StoryDto {
 		StoryDto storyDto = new StoryDto();
 		storyDto.setId(story.getId());
 		storyDto.setContent(story.getContent());
-		storyDto.setCreated_at(story.getCreated_at());
+		storyDto.setCreatedAt(story.getCreatedAt());
 		storyDto.setTitle(story.getTitle());
 		return storyDto;
 	}
