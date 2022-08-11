@@ -26,12 +26,12 @@ public class DiaryService {
 		List<Diary> diarys = repository.findAll();
 		List<DiaryDto> diaryDtos = new ArrayList<>();
 		for (Diary diary : diarys) {
-			logger.info(diary.toString());
+
 			DiaryDto ideaDto = DiaryDto.valueOf(diary);
-			logger.info(ideaDto.toString());
+
 			diaryDtos.add(ideaDto);
 		}
-		logger.info(diaryDtos.toString());
+
 		return diaryDtos;
 	}
 
